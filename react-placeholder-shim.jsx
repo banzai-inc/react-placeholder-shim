@@ -18,8 +18,8 @@
       },
 
       updatePlaceholder: function() {
-        var input = this.refs.input.getDOMNode();
-        var placeholder = this.refs.placeholder.getDOMNode();
+        var input = React.findDOMNode(this.refs.input);
+        var placeholder = React.findDOMNode(this.refs.placeholder);
         if (input.value !== '') {
           placeholder.style.display = 'none';
           return;
@@ -56,7 +56,7 @@
       },
 
       handlePlaceholderClick: function(a, b, c) {
-        this.refs.input.getDOMNode().focus();
+        React.findDOMNode(this.refs.input).focus();
         this.props.onClick && this.props.onClick(a, b, c);
       },
 
